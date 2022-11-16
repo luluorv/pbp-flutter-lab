@@ -48,3 +48,46 @@ Pada pemanggilan `setState()`, framework akan diberikan notifikasi bahwa state i
 
 ### Bonus
 * Tambahkan if statement `if (_counter > 0)` pada button decrement agar hanya tampil bila counter lebih dari 1
+
+
+# Tugas 8
+
+### Perbedaan `Navigator.push` dan `Navigator.pushReplacement`
+* `Navigator.push`: dapat melakukan pop pada stack navigasi, sehingga masih memungkinkan untuk kembali ke halaman yang diakses sebelumnya
+* `Navigator.pushReplacement`: top of stack akan diganti dengan page yang baru diakses, sehingga tidak dapat kembali ke halaman sebelumya
+
+### Widget dalam poroyek
+* `Drawer`: panel dari tepi `Scaffold` yang berisi link navigasi dalam aplikasi
+* `Column`: display children dalam array vertikal
+* `Row`: display children dalam array horizontal
+* `ListTitle`: Baris yang dapat berisi text dan icon
+* `Text`: display sebuah string text dengan satu style
+* `MaterialPageRoute`: rute modal yang menggantikan seluruh layar dengan transisi yang platform-adaptive
+* `SingleChildScrollView`: box yang memungkinkan scroll satu widget
+* `Container`: menggabungkan painting, positioning dan sizing widget
+* `Padding`: menambahkan padding pada child
+* `TextFormField`: `FormField` yang berisi `TextField`
+* `ElevatedButton`: labeled child yang didisplay pada `Material` widget yang `Material.elevation`nya bertambah saat button ditekan 
+* `TextStyle`: style yang mendeskripsikan format dan paint teks
+
+### Jenis-jenis event dalam Flutter
+* `onPressed`: dipanggil saat button ditekan
+* `onLongPress`: dipanggil saat button ditekan lama
+* `onHover`: dipanggil saat pointer masuk dan keluar area respon button
+* `onFocusChange`: handler dipanggil saat fokus berubah
+* `onChanged`: dipanggil saat terjadi perubahan pada value dalam `TextField`
+* `onSaved`: dipanggil saat form disimpan
+
+### Cara kerja `Navigator` dalam "mengganti" halaman
+Saat menganti halaman, method `Navigator.push()` akan dipanggil. Method tersebut akan menambahkan sebuah rute ke dalam stack rute yang dimanage oleh `Navigator`. Bila ingin kembali ke halaman sebelumnya, maka method `Navigator.pop()` akan dipanggil yang akan melakukan pop pada stack.
+
+### Implementasi
+* Membuat drawer/hamburger menu agar dapat mengakses setiap halaman 
+* Membuat model dan list untuk budget yang akan dimasukkan
+* Menambahkan halaman form untuk menambahkan budget ke dalam list
+* Menambahkan halaman untuk mendisplay budget menggunakan `ListView`
+
+### Bonus
+* Menambahkan button untuk memilih tanggal pada form dengan `DateTime` dan menambahkan atribut `tanggal` pada model budget
+* Menambahkan tanggal dari budget di sebelah teks judul budget
+* Membuat file baru untuk drawer dengan class `CustomDrawer` lalu tambahkan pada setiap halaman

@@ -1,3 +1,4 @@
+import 'package:counter_7/widget_drawer/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: const CustomDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

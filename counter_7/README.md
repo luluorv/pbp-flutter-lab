@@ -56,7 +56,7 @@ Pada pemanggilan `setState()`, framework akan diberikan notifikasi bahwa state i
 * `Navigator.push`: dapat melakukan pop pada stack navigasi, sehingga masih memungkinkan untuk kembali ke halaman yang diakses sebelumnya
 * `Navigator.pushReplacement`: top of stack akan diganti dengan page yang baru diakses, sehingga tidak dapat kembali ke halaman sebelumya
 
-### Widget dalam poroyek
+### Widget dalam proyek
 * `Drawer`: panel dari tepi `Scaffold` yang berisi link navigasi dalam aplikasi
 * `Column`: display children dalam array vertikal
 * `Row`: display children dalam array horizontal
@@ -91,3 +91,33 @@ Saat menganti halaman, method `Navigator.push()` akan dipanggil. Method tersebut
 * Menambahkan button untuk memilih tanggal pada form dengan `DateTime` dan menambahkan atribut `tanggal` pada model budget
 * Menambahkan tanggal dari budget di sebelah teks judul budget
 * Membuat file baru untuk drawer dengan class `CustomDrawer` lalu tambahkan pada setiap halaman
+
+
+# Tugas 9
+
+### Pengambilan data JSON tanpa membubat model
+Bisa, data JSON bida didecode melalui `jsonDecode()` dengan string JSON sebagai argumen methodnya. Namun, method ini mengembalina `Map<String, dynamic>`, sehingga sebelum runtime, tipe dari value tidak diketahui. Sedangkan bila menggunakan models, kode akan memiliki type safety, autocompletion dan compile-time exceptions.
+
+### Widget dalam proyek
+* `FutureBuilder`: membuat sebuah widget yang membangun dirinya sendiri berdasarkan snapshot terbaru dari interkasi dengan Future
+* `ListView`: membuat scrollable array linear dari widget yang dapat dibuat 
+* `GestureDetector`: membuat widget yang dapat mendeteksi gestur
+* `Checkbox`: membuat meterial design checkbox
+
+### Mekanisme pengambilan data JSON hingga ditampilkan pada Flutter
+* Tambahkan package http untuk fetch data dari internet
+* Membuat method untuk melakukan fetch data JSON dengan `http.get()`
+* Membuat model yang akan berisi data dari network request
+* Dalam model tambahkan juga factory constructor yang akan membuat objek tersebut dari JSON.
+* Display data menggunakan widget FutureBuilder
+
+### Implementasi
+* Menambahkan model `MyWatchList`
+* Membuat method `fetchWatchlist()` untuk mendapatkan data JSON
+* Menambahkan halaman yang menampilkan setiap watchlist dan detailnya bila ditekan
+* Menambahkan watchlist ke dalam drawer
+
+### Bonus 
+* Menambahkan checkbox pada watchlist
+* Menambahkan border pada container watchlist
+* Menempatkan method `fetchWatchList()` ke dalam file baru
